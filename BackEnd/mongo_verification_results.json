@@ -1,0 +1,9 @@
+{
+  "productsCount": 1,
+  "categoriesCount": 1,
+  "suppliersCount": 3,
+  "orphanedCategories": [],
+  "orphanedSuppliers": [],
+  "errors": [],
+  "passed": true
+}

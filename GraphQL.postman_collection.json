@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "GraphQL vs REST Seminar - GraphQL API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "graphqlUrl",
+      "value": "http://localhost:4000/graphql",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "ENTER_PRODUCT_ID",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get Products (Over-fetching demo)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "query {\n  products {\n    id\n    name\n    price\n  }\n}",
+            "variables": ""
+          }
+        },
+        "url": {
+          "raw": "{{graphqlUrl}}",
+          "host": [
+            "{{graphqlUrl}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Nested Product (Under-fetching demo)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "query GetNestedProduct($id: ID!) {\n  product(id: $id) {\n    id\n    name\n    categoryDetails {\n      name\n    }\n    supplier {\n      name\n      contact\n    }\n  }\n}",
+            "variables": "{\n  \"id\": \"{{productId}}\"\n}"
+          }
+        },
+        "url": {
+          "raw": "{{graphqlUrl}}",
+          "host": [
+            "{{graphqlUrl}}"
+          ]
+        }
+      }
+    }
+  ]
+}

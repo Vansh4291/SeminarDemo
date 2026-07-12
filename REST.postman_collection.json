@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "GraphQL vs REST Seminar - REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "ENTER_PRODUCT_ID",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Product By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products/{{productId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            "{{productId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/categories",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "categories"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Suppliers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/suppliers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "suppliers"
+          ]
+        }
+      }
+    }
+  ]
+}
