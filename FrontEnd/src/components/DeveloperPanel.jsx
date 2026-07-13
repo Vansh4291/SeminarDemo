@@ -20,7 +20,7 @@ export default function DeveloperPanel() {
 
   if (!isOpen) {
     return (
-      <div className="dev-panel-toggle" onClick={() => setIsOpen(true)}>
+      <div key="panel-toggle" className="dev-panel-toggle" onClick={() => setIsOpen(true)}>
         <span className="dev-icon">🧑‍💻</span>
         <div className="dev-toggle-text">Network Panel</div>
         {requestHistory.length > 0 && (
@@ -31,7 +31,7 @@ export default function DeveloperPanel() {
   }
 
   return (
-    <div className="dev-panel">
+    <div key="panel-open" className="dev-panel">
       <div className="dev-panel-header">
         <h3>Network Activity</h3>
         <div style={{ display: 'flex', gap: '8px' }}>
